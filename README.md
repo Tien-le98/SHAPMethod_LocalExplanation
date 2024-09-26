@@ -41,13 +41,13 @@ Because Disp, FuelConsumption, and Cyl variables were highly correlated to each 
 ### Exploratory Data Analysis (EDA)
 Several main relationships can be extracted as below:
 + Automatic used vehicles tended to have higher average price than manual vehicles, holding other features unchanged. It may be because an automatic transmission system is more advanced and complicated than a manual system, it usually requires higher production costs, which can result in higher prices.
++ Keeping other variables unchanged, hybrid second-hand vehicles witnessed the highest average price, while the figure for LPG vehicles was the lowest. Particularly, hybrid cars usually have higher prices than other petrol-powered cars due to its better fuel efficiency. On the contrary, the average price of LPG vehicles was the lowest because LPG cars have a lower energy density per litre, which means that when travelling the same distance, LPG cars usually require more fuel than petrol-powered vehicles. Hence, customers tend to shift their demands toward more efficient cars, which lead to a decline in the number of LPG cars used in Australia as well as their prices.
 
 <p float="left">
   <img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_transmission.png" width="50%" />
+  <img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_fueltype.png" width="50%" />
 </p>
-
-+ 
-2. Keeping other variables unchanged, hybrid second-hand vehicles witnessed the highest average price, while the figure for LPG vehi- cles was the lowest, as presented in Fig. 16. Particularly, hybrid cars usually have higher prices than other petrol-powered cars due to its better fuel efficiency. On the contrary, the average price of LPG vehicles was the lowest because LPG cars have a lower en- ergy density per litre, which means that when travelling the same distance, LPG cars usually require more fuel than petrol-powered vehicles. Hence, customers tend to shift their demands toward more efficient cars, which lead to a decline in the number of LPG cars used in Australia [14] as well as their prices.
+ 
 3. Pre-owned vehicles with 4WD and AWD tended to have higher average prices than the other drive types. In addition, front-wheel drive type had the lowest average price, compared to other drive types, keeping other features fixed, according to Fig. 15. Similar to transmission type, because AWD and 4WD types employ advanced systems to divert power to all four wheels, their production costs are usually higher than the figure for two-wheel drive systems (2WD), thus their prices also tend to be higher.
 4. In terms of Cyl variable only, used vehicles having more than 8 cylinders in engine tended to have significant higher average prices than the others, as shown in Fig. 18. In addition, second-hand cars having more engine cylinders tended to have higher average prices. Similarly, when displacement volume rose, the average prices of
 Page 16 of 36
