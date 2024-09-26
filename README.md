@@ -7,7 +7,7 @@ _Date: 10/08/2024_
 ___
 
 ## INTRODUCTION
-In recent years, the demands of pre-owned vehicles in Australia have significantly increased due to two main reasons. 
+In recent years, the demands of pre-owned vehicles in Australia have significantly increased due to two main reasons:
 
 First, negative events such as the COVID-19 pandemic, Red Sea shipping attacks, and Russia-Ukraine war, have negatively impacted the prices and availability of new vehicles. 
 + During the COVID-19 pandemic, the production and delivery of new vehicles were delayed due to serious lock-downs and social distancing requirements, which resulted in the shortage of available new cars in the automobile market.
@@ -84,7 +84,7 @@ Number of doors | Number of vehicles sold | Percentage (%)
     <img width="50%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/corr_coef_1.png">
 </p>
 
-+ According to the correlation plot of the training dataset, only Cyl feature had a positive medium linear relationship with the Price variable, and its correlation coefficient was 0.46. By contrast, Kilometres run had the highest negative impact on the prices, with linear correlation coefficient of around -0.375. However, other features only had weak linear relationships with the price. These variables might have non-linear relationships with the outcome variable instead of linear relationships, hence their relationships can not be correctly indicated by using these linear correlation coefficients, which was confirmed by GAM plots below.
++ According to the correlation plot above, only Cyl feature had a positive medium linear relationship with the Price variable, and its correlation coefficient was 0.46. By contrast, Kilometres run had the highest negative impact on the prices, with linear correlation coefficient of around -0.375. However, other features only had weak linear relationships with the price. These variables might have non-linear relationships with the outcome variable instead of linear relationships, hence their relationships can not be correctly indicated by using these linear correlation coefficients, which was confirmed by GAM plots below.
 
 <p align="center" width="100%">
     <img width="45%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/gam_plot_splited.png">
