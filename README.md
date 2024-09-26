@@ -17,13 +17,53 @@ This project focuses on 4 main tasks, as shown below:
 + Evaluating the effect of each feature’s value ranges or categories on the price predictions, to support customers in tailoring their needs for suitable used vehicles.
 + Using BayesSHAP to evaluate the uncertainty of Shapley values. Lower uncertainty can indicate higher confidence in using Shapley values for local explanations and measuring features’ importance.
 
-## EXPERIMENTS
+## PROJECT WORKFLOW
 
-### Experiment 1
+### Data cleaning
 
-The first experiment was carried out to compare model’s performance on the original dataset and the pre-processed dataset, in order to figure out if pre-processing steps are necessary for models to perform better.
+The dataset employed in this paper was Australian Vehicle Prices dataset, gathered from Kaggle. The dataset included 16734 vehicles sold from 1978 to 2023. Several used cars’ features were: 
++ Transmission type: Automatic and Manual
++ Drive type: Front-wheel/Front, Four-wheel/4WD, All-wheel/AWD, and Rear-wheel/Rear
++ Fuel type: Unleaded, Diesel, Premium, Hybrid, and Liquefied Petroleum Gas/LPG
++ Body type: SUV, Hatch-back, Ute/Tray, Sedan, Wagon, Commercial, Coupe, Convertible, People Mover, and Other
++ The volume of displacement (Disp)
++ Fuel consumption rate (FuelConsumption)
++ Kilometres traveled (Kilometres)
++ The number of cylinders in engine (CylindersinEngine/Cyl)
++ The quantity of doors (Doors), and
++ The number of seats (Seats).
 
-A baseline CNN model was built with 1 input layer, 1 output layer with 10 neurons, using Softmax function and Sparse categorical crossentropy loss function. This baseline model contained 1 convolutional layer with 64 filters and kernel size of 3x3, followed by a 2x2 max pooling layer, a fully connected layer with 256 neurons and two Dropout layers. SGD optimizer with learning rate of 0.001 was employed in this baseline CNN model. Additionally, this model ran through 300 epochs, and batch size of 100. Early stopping method was also employed to prevent models from potential overfitting problem. The baseline model was trained on the original dataset, a dataset pre-processed with Standard scaling method, Max-Min scaling method, and other data augmentation methods (flipping, rotation, and contrast). The training accuracy score and validation accuracy score of the baseline model were shown in the below figure.
+### Data pre-processing and data splitting
+The dataset went through various pre-processing steps such as data type correctness, variable transformation, removing invalid values, handling outliers and missing values. The final dataset only comprised 11914 pre-owned vehicles sold from 2010 to 2023. 
+
+Because Disp, FuelConsumption, and Cyl variables were highly correlated to each other, this can indicate a multicollinearity problem, which can negatively affect model performance. In addition, since Cyl feature had the highest correlation coefficient with the price, only Cyl was remained, Disp and FuelConsumption were removed from the final dataset. Therefore, the final dataset had 10 features and 1 dependent variable (Price).
+
+### Exploratory Data Analysis (EDA)
+Several main relationships can be extracted as below:
++ Automatic used vehicles tended to have higher average price than manual vehicles, holding other features unchanged, as shown in Fig. 14. It may be because an automatic transmission system is more advanced and complicated than a manual system, it usually requires higher production costs, which can result in higher prices.
+2. Keeping other variables unchanged, hybrid second-hand vehicles witnessed the highest average price, while the figure for LPG vehi- cles was the lowest, as presented in Fig. 16. Particularly, hybrid cars usually have higher prices than other petrol-powered cars due to its better fuel efficiency. On the contrary, the average price of LPG vehicles was the lowest because LPG cars have a lower en- ergy density per litre, which means that when travelling the same distance, LPG cars usually require more fuel than petrol-powered vehicles. Hence, customers tend to shift their demands toward more efficient cars, which lead to a decline in the number of LPG cars used in Australia [14] as well as their prices.
+3. Pre-owned vehicles with 4WD and AWD tended to have higher average prices than the other drive types. In addition, front-wheel drive type had the lowest average price, compared to other drive types, keeping other features fixed, according to Fig. 15. Similar to transmission type, because AWD and 4WD types employ advanced systems to divert power to all four wheels, their production costs are usually higher than the figure for two-wheel drive systems (2WD), thus their prices also tend to be higher.
+4. In terms of Cyl variable only, used vehicles having more than 8 cylinders in engine tended to have significant higher average prices than the others, as shown in Fig. 18. In addition, second-hand cars having more engine cylinders tended to have higher average prices. Similarly, when displacement volume rose, the average prices of
+Page 16 of 36
+Pham Thuy Tien Le Explaining Used Vehicle Price Predictions
+ used cars also increased. The same trend also can be seen in Fuel- Consumption factor. According to Fig. 18, Fig. 19, and 20, engines having higher displacement volume and more engine cylinders can generate more power and consume more fuel, therefore, the prices of those powerful and bigger engines tend to be higher.
+5. Considering the number of doors only, as shown in Fig. 17, used vehicles with 2 doors had the highest average price because they had higher number of engine cylinders and higher displacement volume. Following 2-door vehicles, vehicles with 4 doors had the second highest average price because it was the most popular vehicle type sold in the period 2010-2023, as indicated in the below Tab. 1. Therefore, it can be seen that higher demands in used vehicles with 4 doors can lead to their higher prices.
+6. If we only consider kilometres run, pre-owned vehicles that have traveled more kilometres tended to have lower prices than those with fewer kilometres run, as presented in Fig. 21. It may be because vehicles have run more kilometres tend to be older than the other used vehicles.
+Number of doors
+2 3 4 5
+Number of vehicles sold
+765
+132
+8934
+2083
+Percentage (%)
+6.4 1.1 75 17.5
+  Table 1: The quantity and percentage of different categories of Doors variable. Used vehicles with 4 doors was the most popular, which made up 75% of the total number of vehicles sold from 2010 to 2023.
+
+### Training and fine-tuning ML models
+
+
+
 
 <a href="url"><img src="https://github.com/Tien-le98/CIFAR-10-Image-Classification/blob/main/baseline.png" align="center"></a>
 
