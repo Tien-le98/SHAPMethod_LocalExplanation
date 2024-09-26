@@ -125,6 +125,10 @@ GAM | 15708.113 | 0.63
 
 + Average Shapley values for each feature’s category or value range were also presented in the below figure. This figure can support Australian customers in estimating the difference between the predicted price of a second-hand vehicle and the average price when this vehicle’s features are available. For example, considering Kilometres traveled only, with a value of Kilometres less than 50000km, used vehicle’s predicted price tended to be nearly 4570AUD higher on average than the average price. Similarly, the estimated price of a second-hand vehicle using Unleaded tended to be 2645AUD lower than the average price. In terms of drive type only, a pre-owned vehicle using 4WD or AWD can have a predicted price over 2750AUD higher than the average price.
 
+<p align="center" width="100%">
+    <img width="50%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/shap_each_valuerange.png">
+</p>
+
 
 ### Experiment 2
 
