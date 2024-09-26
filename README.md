@@ -9,7 +9,9 @@ ___
 ## INTRODUCTION
 In recent years, the demands of pre-owned vehicles in Australia have significantly increased due to two main reasons. First, negative events such as the COVID-19 pandemic, Red Sea shipping attacks, and Russia-Ukraine war, have negatively impacted the prices and availability of new vehicles. During the COVID-19 pandemic, the production and delivery of new vehicles were delayed due to serious lock-downs and social distancing requirements, which resulted in the shortage of available new cars in the automobile market. Besides, arising Red Sea shipping attacks compelled carriers to travel through the longer Cape of Good Hope route, which led to soaring transport costs and delivery delays for new vehicles. In addition, the supply chain of wiring harnesses, which is an important material used in manufacturing vehicles, was disrupted due to the Russia-Ukraine war, which also raised the prices of new vehicles. Second, in light of the government’s proposed New Vehicle Efficiency Standards, along with fierce competition from many rivals, automobile brands tend to apply more technological advancements to their products, making future vehicles more expensive. Due to this low availability and high prices of new vehicles, customers’ demands were shifted toward second-hand vehicles, causing an increase in used vehicles’ demands and their prices. As shown in the below figure, the average prices of pre-owned vehicles continuously rose from 2010 to 2023, and the changes in their prices even became more significant during and after the Covid-19 pandemic, which was from 2020 to 2023.
 
-<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/price_YoY.png" width = "70%" align="center" ></a>
+<p align="center" width="100%">
+    <img width="70%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/price_YoY.png">
+</p>
 
 This project focuses on 4 main tasks, as shown below:
 + Building a model that can accurately predict the prices of used vehicles based on their characteristics. Many machine learning models such as linear regression, generalized additive model, tree-based models, and support vector machine, were built and fine-tuned. Their performance were evaluated to figure out the best model, by using RMSE and R-squared.
@@ -105,7 +107,21 @@ GAM | 15708.113 | 0.63
     <img width="30%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/drivetype_shap.png">
 </p>
 
++ Kilometres had the highest average Shapley value across the whole dataset, meaning that this feature had the largest average magnitude of effect on the price predictions.
++ Among 10 vehicle features considered in this project, Seats, State, and Transmission variables had very small impact on the estimated prices of pre-owned vehicles.
++ There were also several interaction effects between features and the predicted prices. For example, when considering BodyType only, to vehicles which are SUV, Sedan, Ute/Tray, and Wagon, their price predictions tended to be lower than the average price, because Shapley values of these body types were less than 0. Additionally, the lower numbers of engine cylinders in these body types even decreased the estimated prices more significantly than the higher values of Cyl variable.
++ When considering the effect of Brands variable only, to some brands such as Audi, BMW, and Ford, their price predictions tended to be lower than the average price due to their negative Shapley values. In addition, with higher numbers of engine cylinders, their estimated prices even became considerably lower than the average price, as shown in the bottom left corner of the plot. By contrast, other brands witnessed the opposite trend because their predictions tended to be higher than the average price, and these figures became much higher when they have higher number of cylinders in engines.
 
+<p align="center" width="100%">
+    <img width="49%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/bodytype_cylinderinengine.png">
+    <img width="49%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/brand_cyl_shap.png">
+</p>
+
++ In terms of kilometres traveled, no matter which fuel type were employed, the prices of second-hand vehicles which traveled less than 50000km were higher than the average price, while the figure for vehicles traveled more than 50000km was lower.
+
+<p align="center" width="100%">
+    <img width="70%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/kilometre_shap.png">
+</p>
 
 
 + In terms of the original dataset, the baseline CNN model converged after around 5 epochs with the accuracy score on the training set and the validation set of only 10%. However, this baseline model performed better on the dataset pre-processed by only Standard scaling method, with the maximum accuracy score on the training set was about 81%, and the maximum accuracy score on the validation set was nearly 67%, after 43 epochs. Because this accuracy score on the training set was around 14% higher than the figure for the validation set, this gap can raise a signal for potential overfitting problem. On the pre-processed data using only Max-Min scaling method, after 127 epochs, this baseline model obtained the accuracy score on the training dataset of about 79%, and the figure for the validation dataset of nearly 66%. Through this experiment, the dataset should be pre-processed before training CNN models in order to improve the model’s performance because accuracy score of models trained on the pre-processed dataset were significantly higher than the figure for the original dataset.
