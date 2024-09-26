@@ -7,7 +7,16 @@ _Date: 10/08/2024_
 ___
 
 ## INTRODUCTION
-In recent years, the demands of pre-owned vehicles in Australia have significantly increased due to two main reasons. First, negative events such as the COVID-19 pandemic, Red Sea shipping attacks, and Russia-Ukraine war, have negatively impacted the prices and availability of new vehicles. During the COVID-19 pandemic, the production and delivery of new vehicles were delayed due to serious lock-downs and social distancing requirements, which resulted in the shortage of available new cars in the automobile market. Besides, arising Red Sea shipping attacks compelled carriers to travel through the longer Cape of Good Hope route, which led to soaring transport costs and delivery delays for new vehicles. In addition, the supply chain of wiring harnesses, which is an important material used in manufacturing vehicles, was disrupted due to the Russia-Ukraine war, which also raised the prices of new vehicles. Second, in light of the government’s proposed New Vehicle Efficiency Standards, along with fierce competition from many rivals, automobile brands tend to apply more technological advancements to their products, making future vehicles more expensive. Due to this low availability and high prices of new vehicles, customers’ demands were shifted toward second-hand vehicles, causing an increase in used vehicles’ demands and their prices. As shown in the below figure, the average prices of pre-owned vehicles continuously rose from 2010 to 2023, and the changes in their prices even became more significant during and after the Covid-19 pandemic, which was from 2020 to 2023.
+In recent years, the demands of pre-owned vehicles in Australia have significantly increased due to two main reasons. 
+
+First, negative events such as the COVID-19 pandemic, Red Sea shipping attacks, and Russia-Ukraine war, have negatively impacted the prices and availability of new vehicles. 
++ During the COVID-19 pandemic, the production and delivery of new vehicles were delayed due to serious lock-downs and social distancing requirements, which resulted in the shortage of available new cars in the automobile market.
++ Besides, arising Red Sea shipping attacks compelled carriers to travel through the longer Cape of Good Hope route, which led to soaring transport costs and delivery delays for new vehicles.
++ In addition, the supply chain of wiring harnesses, which is an important material used in manufacturing vehicles, was disrupted due to the Russia-Ukraine war, which also raised the prices of new vehicles.
+
+Second, in light of the government’s proposed New Vehicle Efficiency Standards, along with fierce competition from many rivals, automobile brands tend to apply more technological advancements to their products, making future vehicles more expensive.
+
+Due to this low availability and high prices of new vehicles, customers’ demands were shifted toward second-hand vehicles, causing an increase in used vehicles’ demands and their prices. As shown in the below figure, the average prices of pre-owned vehicles continuously rose from 2010 to 2023, and the changes in their prices even became more significant during and after the Covid-19 pandemic, which was from 2020 to 2023.
 
 <p align="center" width="100%">
     <img width="70%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/price_YoY.png">
@@ -23,7 +32,7 @@ This project focuses on 4 main tasks, as shown below:
 
 ### Data collection
 
-The dataset employed in this paper was Australian Vehicle Prices dataset, gathered from Kaggle. The dataset included 16734 vehicles sold from 1978 to 2023. Several used cars’ features were: 
+The dataset employed in this project was Australian Vehicle Prices dataset, gathered from Kaggle. The dataset included 16734 vehicles sold from 1978 to 2023. Several used cars’ features were: 
 + Transmission type: Automatic and Manual
 + Drive type: Front-wheel/Front, Four-wheel/4WD, All-wheel/AWD, and Rear-wheel/Rear
 + Fuel type: Unleaded, Diesel, Premium, Hybrid, and Liquefied Petroleum Gas/LPG
@@ -159,6 +168,6 @@ Through results of the project, there were several main points as belows:
 However, this project still has several limitations that should be addressed in further improvements. 
 + First, observations of minority classes in this dataset should be gathered more, in order to prevent model outputs from being biased. For example, the number of automatic second-hand vehicles were 5 times higher than the figures for manual used vehicles. In addition, the quantity of pre-owned cars with 4 doors were at least 4 times higher than the figures for other categories. This current imbalance of the dataset can negatively affect model performance, and may lead to biased results.
 + Second, as shown in the correlation plots, most features only have weak and medium linear relationships with the dependent variable, hence, more important features should be added to the model in order to increase its ability in correctly predicting used vehicle prices.
-+ Third, several previous papers showed that applying DL models, particularly neural network models, can achieve better performance than traditional ML models. In addition, text variables such as vehicles’ titles and colors were not considered in this project since these variables comprised a lot of words, letters, and categories, which were difficult to be handled by traditional ML models. Therefore, DL models should be considered in future research to figure out the best model for this regression task, and address the problem of textual variables.
++ Third, applying DL models, particularly neural network models, can achieve better performance than traditional ML models. In addition, text variables such as vehicles’ titles and colors were not considered in this project since these variables comprised a lot of words, letters, and categories, which were difficult to be handled by traditional ML models. Therefore, DL models should be considered in the future to figure out the best model for this regression task, and address the problem of textual variables.
 
 > Please refer to this code file for more details: [code](https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/code_file.ipynb)
