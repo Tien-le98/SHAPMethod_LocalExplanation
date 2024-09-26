@@ -49,7 +49,7 @@ Several main relationships can be extracted as below:
 <a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_drivetype.png" align="right" width = "48%" ></a>
 + Pre-owned vehicles with 4WD and AWD tended to have higher average prices than the other drive types. In addition, front-wheel drive type had the lowest average price, compared to other drive types, keeping other features fixed. Similar to transmission type, because AWD and 4WD types employ advanced systems to divert power to all four wheels, their production costs are usually higher than the figure for two-wheel drive systems (2WD), thus their prices also tend to be higher.
 
-<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_cyl.png" align="right" width = "45%" ></a>
+<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_cyl.png" align="right" width = "48%" ></a>
 + In terms of Cyl variable only, used vehicles having more than 8 cylinders in engine tended to have significant higher average prices than the others. In addition, second-hand cars having more engine cylinders tended to have higher average prices. Similarly, when displacement volume rose, the average prices of used cars also increased. The same trend also can be seen in FuelConsumption factor. According to below figure, engines having higher displacement volume and more engine cylinders can generate more power and consume more fuel, therefore, the prices of those powerful and bigger engines tend to be higher.
 <p align="center" width="100%">
     <img width="45%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_displacement.png">
@@ -69,12 +69,32 @@ Number of doors | Number of vehicles sold | Percentage (%)
 5 | 2083 | 17.5
 
 + According to the correlation plot of the training dataset, only Cyl feature had a positive medium linear relationship with the Price variable, and its correlation coefficient was 0.46. By contrast, Kilometres run had the highest negative impact on the prices, with linear correlation coefficient of around -0.375. However, other features only had weak linear relationships with the price. These variables might have non-linear relationships with the outcome variable instead of linear relationships, hence their relationships can not be correctly indicated by using these linear correlation coefficients, which was confirmed by GAM plots later.
-<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/corr_coef_1.png" align="center" width = "60%" ></a>
+<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/corr_coef_1.png" align="center" width = "50%" ></a>
 
 
 ### Training and fine-tuning ML models
 
-<a href="url"><img src="https://github.com/Tien-le98/CIFAR-10-Image-Classification/blob/main/baseline.png" align="center"></a>
+Performance of various ML models were showed in the below table.
+
+Model | RMSE | R-squared
+--- | --- | ---
+Decision tree | 14695.143 | 0.676
+$${\color{green}Random forest}$$ | $${\color{green}10933.343}$$ |  $${\color{green}0.821}$$
+XGBoost Regressor | 11158.176 | 0.813 
+Support vector machine | 23842.403 | 0.148 
+Linear regression | 18114.083 | 0.508 
+RuleFit | 15224.721 | 0.653 
+Lasso regression | 18114.019 | 0.508 
+Ridge regression | 18114.028 | 0.508  
+GAM | 15708.113 | 0.63
+
++ SVM achieved the lowest R-squared value, which means that this model was the worst model for the Australian Vehicle Prices dataset.
++ Since relationships between vehicle features and the prices were mostly non-linear, and the interaction terms between features were not considered, linear regression models such as linear regression, lasso regression, and ridge regression also achieved low R-squared (only about 0.508).
++ Taking non-linear relationships into consideration, the GAM performance was pretty higher than these linear regressors, with R-squared of about 0.63.
++ Besides, by combining interaction terms extracted from decision rules and existing features, RuleFit also acquired a higher R- squared of around 0.653.
++ The best model was random forest with 200 trees, and its maximum number of features to consider when looking for the best split was log2(p) with p is the total number of features. Its RMSE value was about 10933.343 and R-squared value was up to 0.821 (82.1%). 
+
+
 
 + In terms of the original dataset, the baseline CNN model converged after around 5 epochs with the accuracy score on the training set and the validation set of only 10%. However, this baseline model performed better on the dataset pre-processed by only Standard scaling method, with the maximum accuracy score on the training set was about 81%, and the maximum accuracy score on the validation set was nearly 67%, after 43 epochs. Because this accuracy score on the training set was around 14% higher than the figure for the validation set, this gap can raise a signal for potential overfitting problem. On the pre-processed data using only Max-Min scaling method, after 127 epochs, this baseline model obtained the accuracy score on the training dataset of about 79%, and the figure for the validation dataset of nearly 66%. Through this experiment, the dataset should be pre-processed before training CNN models in order to improve the model’s performance because accuracy score of models trained on the pre-processed dataset were significantly higher than the figure for the original dataset.
 + Besides, according to this above table, when a CNN model only contains several layers, its capability is low, data augmentation methods applied on this model can make it perform worse, which was shown by the decrease in the training accuracy score and validation accuracy score. Hence, these data augmentation methods only should be considered in deeper and more complicated neural networks.
