@@ -80,11 +80,11 @@ Number of doors | Number of vehicles sold | Percentage (%)
 4 | 8934 | 75
 5 | 2083 | 17.5
 
-<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/corr_coef_1.png" align="right" width = "50%" ></a>
+<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/corr_coef_1.png" align="right" width = "40%" ></a>
 + According to the correlation plot of the training dataset, only Cyl feature had a positive medium linear relationship with the Price variable, and its correlation coefficient was 0.46. By contrast, Kilometres run had the highest negative impact on the prices, with linear correlation coefficient of around -0.375. However, other features only had weak linear relationships with the price. These variables might have non-linear relationships with the outcome variable instead of linear relationships, hence their relationships can not be correctly indicated by using these linear correlation coefficients, which was confirmed by GAM plots below.
 <p align="center" width="100%">
-    <img width="49%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/gam_plot_splited.png">
     <img width="49%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/gam_plot_splited_1.png">
+    <img width="49%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/gam_plot_splited.png">
 </p>
 
 
