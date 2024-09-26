@@ -46,20 +46,16 @@ Several main relationships can be extracted as below:
 <a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_fueltype.png" align="right" width = "50%" ></a>
 + Keeping other variables unchanged, hybrid second-hand vehicles witnessed the highest average price, while the figure for LPG vehicles was the lowest. Particularly, hybrid cars usually have higher prices than other petrol-powered cars due to its better fuel efficiency. On the contrary, the average price of LPG vehicles was the lowest because LPG cars have a lower energy density per litre, which means that when travelling the same distance, LPG cars usually require more fuel than petrol-powered vehicles. Hence, customers tend to shift their demands toward more efficient cars, which lead to a decline in the number of LPG cars used in Australia as well as their prices.
 
+<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_drivetype.png" align="right" width = "50%" ></a>
++ Pre-owned vehicles with 4WD and AWD tended to have higher average prices than the other drive types. In addition, front-wheel drive type had the lowest average price, compared to other drive types, keeping other features fixed. Similar to transmission type, because AWD and 4WD types employ advanced systems to divert power to all four wheels, their production costs are usually higher than the figure for two-wheel drive systems (2WD), thus their prices also tend to be higher.
++ In terms of Cyl variable only, used vehicles having more than 8 cylinders in engine tended to have significant higher average prices than the others. In addition, second-hand cars having more engine cylinders tended to have higher average prices. Similarly, when displacement volume rose, the average prices of used cars also increased. The same trend also can be seen in FuelConsumption factor. According to below figure, engines having higher displacement volume and more engine cylinders can generate more power and consume more fuel, therefore, the prices of those powerful and bigger engines tend to be higher.
 <p align="center" width="100%">
-    <img width="30%" src="https://github.com/Tien-le98/DA_Project_Spotify/blob/main/danceability">
-    <img width="30%" src="https://github.com/Tien-le98/DA_Project_Spotify/blob/main/tempo">
-    <img width="30%" src="https://github.com/Tien-le98/DA_Project_Spotify/blob/main/speechiness">
+    <img width="30%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_cyl.png">
+    <img width="30%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_displacement.png">
+    <img width="30%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_fuelconsumption.png">
 </p>
 
- 
-3. Pre-owned vehicles with 4WD and AWD tended to have higher average prices than the other drive types. In addition, front-wheel drive type had the lowest average price, compared to other drive types, keeping other features fixed, according to Fig. 15. Similar to transmission type, because AWD and 4WD types employ advanced systems to divert power to all four wheels, their production costs are usually higher than the figure for two-wheel drive systems (2WD), thus their prices also tend to be higher.
-4. In terms of Cyl variable only, used vehicles having more than 8 cylinders in engine tended to have significant higher average prices than the others, as shown in Fig. 18. In addition, second-hand cars having more engine cylinders tended to have higher average prices. Similarly, when displacement volume rose, the average prices of
-Page 16 of 36
-Pham Thuy Tien Le Explaining Used Vehicle Price Predictions
- used cars also increased. The same trend also can be seen in Fuel- Consumption factor. According to Fig. 18, Fig. 19, and 20, engines having higher displacement volume and more engine cylinders can generate more power and consume more fuel, therefore, the prices of those powerful and bigger engines tend to be higher.
-5. Considering the number of doors only, as shown in Fig. 17, used vehicles with 2 doors had the highest average price because they had higher number of engine cylinders and higher displacement volume. Following 2-door vehicles, vehicles with 4 doors had the second highest average price because it was the most popular vehicle type sold in the period 2010-2023, as indicated in the below Tab. 1. Therefore, it can be seen that higher demands in used vehicles with 4 doors can lead to their higher prices.
-6. If we only consider kilometres run, pre-owned vehicles that have traveled more kilometres tended to have lower prices than those with fewer kilometres run, as presented in Fig. 21. It may be because vehicles have run more kilometres tend to be older than the other used vehicles.
++ Considering the number of doors only, used vehicles with 2 doors had the highest average price because they had higher number of engine cylinders and higher displacement volume. Following 2-door vehicles, vehicles with 4 doors had the second highest average price because it was the most popular vehicle type sold in the period 2010-2023, as indicated in the below Tab. 1. Therefore, it can be seen that higher demands in used vehicles with 4 doors can lead to their higher prices.
 Number of doors
 2 3 4 5
 Number of vehicles sold
@@ -69,7 +65,9 @@ Number of vehicles sold
 2083
 Percentage (%)
 6.4 1.1 75 17.5
-  Table 1: The quantity and percentage of different categories of Doors variable. Used vehicles with 4 doors was the most popular, which made up 75% of the total number of vehicles sold from 2010 to 2023.
+
+<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_kilo.png" align="right" width = "50%" ></a>
++ If we only consider kilometres run, pre-owned vehicles that have traveled more kilometres tended to have lower prices than those with fewer kilometres run. It may be because vehicles have run more kilometres tend to be older than the other used vehicles.
 
 ### Training and fine-tuning ML models
 
