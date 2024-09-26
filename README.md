@@ -62,7 +62,7 @@ Several main relationships can be extracted as below:
 <a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_kilo.png" align="right" width = "50%" ></a>
 + If we only consider kilometres run, pre-owned vehicles that have traveled more kilometres tended to have lower prices than those with fewer kilometres run. It may be because vehicles have run more kilometres tend to be older than the other used vehicles.
 
-+ Considering the number of doors only, used vehicles with 2 doors had the highest average price because they had higher number of engine cylinders and higher displacement volume. Following 2-door vehicles, vehicles with 4 doors had the second highest average price because it was the most popular vehicle type sold in the period 2010-2023, as indicated in the below Tab. 1. Therefore, it can be seen that higher demands in used vehicles with 4 doors can lead to their higher prices.
++ Considering the number of doors only, used vehicles with 2 doors had the highest average price because they had higher number of engine cylinders and higher displacement volume. Following 2-door vehicles, vehicles with 4 doors had the second highest average price because it was the most popular vehicle type sold in the period 2010-2023, as indicated in the below table. Therefore, it can be seen that higher demands in used vehicles with 4 doors can lead to their higher prices.
 
 Number of doors | Number of vehicles sold | Percentage (%)
 --- | --- | ---
@@ -71,8 +71,12 @@ Number of doors | Number of vehicles sold | Percentage (%)
 4 | 8934 | 75
 5 | 2083 | 17.5
 
-+ According to the correlation plot of the training dataset, only Cyl feature had a positive medium linear relationship with the Price variable, and its correlation coefficient was 0.46. By contrast, Kilometres run had the highest negative impact on the prices, with linear correlation coefficient of around -0.375. However, other features only had weak linear relationships with the price. These variables might have non-linear relationships with the outcome variable instead of linear relationships, hence their relationships can not be correctly indicated by using these linear correlation coefficients, which was confirmed by GAM plots later.
-<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/corr_coef_1.png" align="center" width = "50%" ></a>
+<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/corr_coef_1.png" align="right" width = "50%" ></a>
++ According to the correlation plot of the training dataset, only Cyl feature had a positive medium linear relationship with the Price variable, and its correlation coefficient was 0.46. By contrast, Kilometres run had the highest negative impact on the prices, with linear correlation coefficient of around -0.375. However, other features only had weak linear relationships with the price. These variables might have non-linear relationships with the outcome variable instead of linear relationships, hence their relationships can not be correctly indicated by using these linear correlation coefficients, which was confirmed by GAM plots below.
+<p align="center" width="100%">
+    <img width="49%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/gam_plot_splited.png">
+    <img width="49%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/gam_plot_splited_1.png">
+</p>
 
 
 ### Training and fine-tuning ML models
@@ -145,9 +149,16 @@ GAM | 15708.113 | 0.63
 
 ## CONCLUSION
 
-Through results of these experiments, there were several main points as belows:
-+ Preprocessed data steps are important in improving model’s performance. In particular, Standard scaling method can improve model’s performance better than other pre-processing methods.
-+ Although data augmentation techniques can have positive effects on model’s performance, if the model does not have a large number of layers, these techniques can make it performs worse. It was shown through the decreased accuracy score of the baseline CNN model when data augmentation methods were employed. On the contrary, if the neural network is deeper, these data augmentation techniques can promote its performance and mitigate overfitting problem, leading to higher accuracy scores, which was shown in the performance of Resnet-50 architecture when applying different data augmentation methods. However, choosing appropriate number and type of data augmentation methods should be considered thoroughly since employing many techniques can lead to worse model’s performance.
-+ Among different architectures which are appropriate in image classification, Resnet-50 were seen as the best architecture, achieving the highest accuracy score on the training dataset and the validation dataset. After tuning hyperparameters, the Resnet-50 with SGD optimizer, and SELU activation function obtained the highest accuracy score on the validation dataset because SELU activation function can alleviate vanishing gradient, and non-zero mean problems. Therefore, hyperparameters can affect model’s performance, tuning hyperparameters steps can contribute significantly in choosing the best model, which can result in better overall accuracy, meaning that better model’s performance.
+Through results of the project, there were several main points as belows:
 
-> Please refer to this code file for more details: [code](https://github.com/Tien-le98/CIFAR-10-Image-Classification/blob/main/code_file.ipynb)
++ Random forest can outweigh other ML models, and generate good predictions with the R-squared value up to 82%.
++ Only the number of kilometres traveled, the number of cylinders in engine, fuel type, and drive type had significant impact on the estimated prices. The remaining features seem not to have huge influence on the price predictions.
++ Several interaction effects between predictors and the estimated prices were also examined through analyzing SHAP output, but these interaction effects were not very clear. This project also measured the average Shapley value that each category or value range of features can have on the price predictions. For example, on average, some used vehicle features, such as kilometres traveled of more than 50000km, and unleaded fuel type, can have negative contribution to the difference between the price prediction of a specific observation and the average price.
++ According to BayesSHAP output, Shapley values of all features were seen to have high quality and high consistency since their uncertainty values were very small, which can lead to high confidence in employing them.
+
+However, this project still has several limitations that should be addressed in further improvements. 
++ First, observations of minority classes in this dataset should be gathered more, in order to prevent model outputs from being biased. For example, the number of automatic second-hand vehicles were 5 times higher than the figures for manual used vehicles. In addition, the quantity of pre-owned cars with 4 doors were at least 4 times higher than the figures for other categories. This current imbalance of the dataset can negatively affect model performance, and may lead to biased results.
++ Second, as shown in the correlation plots, most features only have weak and medium linear relationships with the dependent variable, hence, more important features should be added to the model in order to increase its ability in correctly predicting used vehicle prices.
++ Third, several previous papers showed that applying DL models, particularly neural network models, can achieve better performance than traditional ML models. In addition, text variables such as vehicles’ titles and colors were not considered in this project since these variables comprised a lot of words, letters, and categories, which were difficult to be handled by traditional ML models. Therefore, DL models should be considered in future research to figure out the best model for this regression task, and address the problem of textual variables.
+
+> Please refer to this code file for more details: [code](https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/code_file.ipynb)
