@@ -88,12 +88,6 @@ Number of doors | Number of vehicles sold | Percentage (%)
     <img width="45%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/gam_plot_splited.png">
 </p>
 
-<p align="center" width="100%">
-    <img width="45%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/gam_plot_splited_1.png">
-    <img width="45%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/gam_plot_splited.png">
-</p>
-
-
 ### Training and fine-tuning ML models
 
 Performance of various ML models were showed in the below table.
