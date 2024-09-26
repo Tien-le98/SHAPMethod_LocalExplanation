@@ -51,6 +51,7 @@ Several main relationships can be extracted as below:
 
 <a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_cyl.png" align="right" width = "48%" ></a>
 + In terms of Cyl variable only, used vehicles having more than 8 cylinders in engine tended to have significant higher average prices than the others. In addition, second-hand cars having more engine cylinders tended to have higher average prices. Similarly, when displacement volume rose, the average prices of used cars also increased. The same trend also can be seen in FuelConsumption factor. According to below figure, engines having higher displacement volume and more engine cylinders can generate more power and consume more fuel, therefore, the prices of those powerful and bigger engines tend to be higher.
+
 <p align="center" width="100%">
     <img width="45%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_displacement.png">
     <img width="45%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_fuelconsumption.png">
@@ -93,6 +94,17 @@ GAM | 15708.113 | 0.63
 + Taking non-linear relationships into consideration, the GAM performance was pretty higher than these linear regressors, with R-squared of about 0.63.
 + Besides, by combining interaction terms extracted from decision rules and existing features, RuleFit also acquired a higher R- squared of around 0.653.
 + The best model was random forest with 200 trees, and its maximum number of features to consider when looking for the best split was log2(p) with p is the total number of features. Its RMSE value was about 10933.343 and R-squared value was up to 0.821 (82.1%). 
+
+### Evaluating Shapley values for vehicle features
++ Because random forest is a tree-based model, TreeSHAP was employed to compute Shapley values for used vehicle features. Shapley value plots were presented in the below figures. 
++ Several vehicle features had pretty clear relationships with the estimated prices. For example, low values of Kilometres, which were presented in blue points, tended to increase the predictions, while high values negatively affected the predicted prices. Similarly, low values of DriveType (AWD, 4WD) raised the predictions, while high values of FuelType (Unleaded) negatively impacted the estimated prices.
+
+<p align="center" width="100%">
+    <img width="30%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/tree_shap_intervention.png">
+    <img width="30%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/avg_shap_intervention.png">
+    <img width="30%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/drivetype_shap.png">
+</p>
+
 
 
 
