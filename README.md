@@ -55,8 +55,8 @@ Several main relationships can be extracted as below:
 + In terms of Cyl variable only, used vehicles having more than 8 cylinders in engine tended to have significant higher average prices than the others. In addition, second-hand cars having more engine cylinders tended to have higher average prices. Similarly, when displacement volume rose, the average prices of used cars also increased. The same trend also can be seen in FuelConsumption factor. According to below figure, engines having higher displacement volume and more engine cylinders can generate more power and consume more fuel, therefore, the prices of those powerful and bigger engines tend to be higher.
 
 <p align="center" width="100%">
-    <img width="45%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_displacement.png">
-    <img width="45%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_fuelconsumption.png">
+    <img width="49%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_displacement.png">
+    <img width="49%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_fuelconsumption.png">
 </p>
 
 <a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_kilo.png" align="right" width = "50%" ></a>
@@ -129,42 +129,18 @@ GAM | 15708.113 | 0.63
     <img width="50%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/shap_each_valuerange.png">
 </p>
 
-
-### Experiment 2
-
-The second experiment was implemented to find out the CNN architecture that achieved highest accuracy score for this image classification task, using the CIFAR-10, among several different architectures. Architectures considered in this project are VGG16, GoogLeNet, GoogLeNet with auxiliary classifiers, InceptionV3, InceptionV3 with fine tuning, and Resnet-50. These architectures employed Sparse categorical crossentropy loss function, SGD optimizer with 0.001, and batch size of 100. Early stopping method also employed to mitigate potential overfitting problem. The output layer of these architecture used Softmax function for classification since classes were encoded as numbers from 0 to 9. All these architectures were set to run through 50 epochs. The performance of all architectures on the training dataset and validation dataset were shown in the below table.
-
-<a href="url"><img src="https://github.com/Tien-le98/CIFAR-10-Image-Classification/blob/main/CNN.png" align="center"></a>
-
-After comparing model’s performance of different CNN architectures on the above table, Resnet-50 (with Relu activation function and SGD optimizer) obtained the highest accuracy score on both the training dataset (above 99%) and the validation dataset (nearly 92%), hence, data augmentation methods were considered in this Resnet-50 architecture. 
-
-### Experiment 3
-
-The third experiment was executed by applying data augmentation methods on the Resnet-50 architecture to figure out if these methods can improve model’s performance. Flipping method was used to flip the input images horizontally and vertically. Rotation method was employed to rotate the input images with a factor of 0.2 while contrast method modifies the difference between the darkest and brightest areas in the input images with a factor of 0.2. The below table shows the performance of this architecture, with different methods of data augmentation. 
-
-<a href="url"><img src="https://github.com/Tien-le98/CIFAR-10-Image-Classification/blob/main/resnet50_dataaugmentation.png" align="center"></a>
-
-It can be seen that data augmentation techniques can perform better on Resnet-50 architecture than the baseline model since this Resnet-50 is more complicated and deeper with the greater number of layers and parameters. These methods can mitigate the overfitting problem, which was shown through the decrease in the difference between training accuracy score and testing accuracy score. This gap of the original Resnet-50 architecture was nearly 7%, while the figure for Resnet-50 with random flip was just about 5%. However, using many data augmentation techniques was not always appropriate since including all methods, such as random flip, random rotation and random contrast methods in this Resnet-50, reduced the model’s performance significantly, with the training accuracy score of only 58.71% and the validation accuracy score of only 23.16%. In addition, through this experiment, the best architecture yielding the highest accuracy score on validation dataset (92.30%) was Resnet-50 with random flip method, however, while validation accuracy score of this Resnet-50 was only 0.7% higher than the figure for the original Resnet-50, it required much longer time to converge. Therefore, the Resnet-50 without data augmentation was still selected to implement the experiment of tuning hyperparameters.
-
-### Experiment 4
-
-The last experiments was carried out by training this Resnet-50 architecture with various values of chosen hyperparameter, to define the optimal hyperparamenters which can lead to better model’s performance. There were 7 combinations of hyperparameters which were tuned in this experiment, keeping other parameters remain unchanged, as shown in the below table. 
-
-<a href="url"><img src="https://github.com/Tien-le98/CIFAR-10-Image-Classification/blob/main/resnet_tuning.png" align="right" height="300" width="350" ></a>
-
-Resnet-50 architecture obtained high validation accuracy score, regardless of different combinations of activation function and optimizer. In general, their validation accuracy scores were about 80% or above. The best model is the Resnet-50 architecture with SELU activation function, SGD optimizer, and its learning rate is 0.001. The below figure showed changes in training loss, training accuracy, validation loss, and validation accuracy of this best model through each epoch. In addition, this model converged after 17 epochs with the training accuracy score of 99.56% and the validation accuracy score of 91.70%, which was just slightly higher than the figure for the original Resnet-50 using ReLU and SGD optimizer. However, in comparison with the baseline model, this best model’s validation accuracy score was nearly 25% higher than the figure for the baseline CNN. In addition, the difference between training accuracy score and validation accuracy score of this best model was only about 8%, which was 6% lower than the figure for the baseline model. Several reasons that can lead to this improvement, as belows: 
-
-+ First, this best Resnet-50 has a deeper network with a greater number of layers than the baseline model, which can help model to learn more information of the input data.
-+ Second, because vanishing gradient and non-zero mean are two of common problems that can negatively affect model’s performance, the SELU activation function also can contributed in this improvement of accuracy scores since it can mitigate vanishing gradient problem and push the mean of activation function closer to 0.
-+ In addition, different from ReLU activation function which converted all negative values to 0, SELU creates a smooth curve going through these negative numbers, hence it still can keep information of these input data, and improve model’s performance.
-
-<a href="url"><img src="https://github.com/Tien-le98/CIFAR-10-Image-Classification/blob/main/resnet_tuning_plot.png" align="center" height="400" width="700"></a>
-
-This best Resnet-50 was used to evaluate model’s performance on the testing dataset. In particular, its testing loss was about 0.258, and its accuracy score and precision score was around 91.3%. In terms of individual classes, each label was predicted accurately more than 90% of its number of images, except for label 2, 3 and 5 since they were only predicted precisely about 87%, 81% and 85% respectively, as shown in the below figure. In addition, in terms of predictions, around 90% of predicted labels were the same with true labels, except for predictions of label 3 and 5, since only 82% labels predicted as 3 were correct, and 88% labels predicted as 5 were precise. 
+### Evaluating uncertainty of Shapley values
++ BayesSHAP package was leveraged to measure the uncertainty of Shapley values for a specific observation as well as the whole testing dataset. The local explanation plot of the first observation was presented in the below figure. On average, Drivetype of 4WD increased the price prediction by about 33923AUD, and Bodytype of Coupe raised this figure by over 7445AUD. On the contrary, Kilometres traveled of 80861km decreased the estimated price by around 14602AUD, and having only 4 cylinders in engine also negatively affected the price prediction with the magnitude of effect was around 38623AUD.
++ In addition, the error bars also presented the uncertainty of Shapley value for each feature of this first observation. The uncertainty seemed to be very small, in comparison with the respective average Shapley values, and the uncertainty even became much smaller when considering the whole testing set, instead of only one record.
 
 <p align="center" width="100%">
-    <img width="49%" src="https://github.com/Tien-le98/CIFAR-10-Image-Classification/blob/main/confmat_truelabel.png">
-    <img width="49%" src="https://github.com/Tien-le98/CIFAR-10-Image-Classification/blob/main/confmat_predictedlabel.png">
+    <img width="50%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/bayes_data0.png">
+</p>
+
++ The Shapley value uncertainty of all variables in the whole testing set only ranged from 13AUD to 18AUD on average, which were very small, in comparison with the average Shapley values. Therefore, these low values of uncertainty can indicate the high quality and high consistency of the Shapley values, which can lead to high confidence in utilising them for making local explanations, measuring effects of independent features on the target variable, and evaluating feature importance.
+
+<p align="center" width="100%">
+    <img width="50%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/bayes_global.png">
 </p>
 
 ## CONCLUSION
