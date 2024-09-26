@@ -11,12 +11,11 @@ In recent years, the demands of pre-owned vehicles in Australia have significant
 
 <a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/price_YoY.png" align="center" ></a>
 
-This project focuses on four main tasks, as shown below:
-+ Building a model that can accurately predict the prices of used ve- hicles based on their characteristics. Many machine learning mod- els such as linear regression, generalized additive model, tree-based models, and support vector machine, were built and fine-tuned. Their performance were evaluated to figure out the best model.
+This project focuses on 4 main tasks, as shown below:
++ Building a model that can accurately predict the prices of used vehicles based on their characteristics. Many machine learning models such as linear regression, generalized additive model, tree-based models, and support vector machine, were built and fine-tuned. Their performance were evaluated to figure out the best model, by using RMSE and R-squared.
 + Computing features’ importance, and the average magnitude of effect that each feature can have on the predictions, to identify which vehicle features can significantly impact the estimated prices. Particularly, KernelSHAP and TreeSHAP were considered on the best model to calculate Shapley values for each vehicle feature. The average Shapley value of each feature across the whole dataset was seen as its feature importance.
 + Evaluating the effect of each feature’s value ranges or categories on the price predictions, to support customers in tailoring their needs for suitable used vehicles.
 + Using BayesSHAP to evaluate the uncertainty of Shapley values. Lower uncertainty can indicate higher confidence in using Shapley values for local explanations and measuring features’ importance.
-
 
 ## EXPERIMENTS
 
