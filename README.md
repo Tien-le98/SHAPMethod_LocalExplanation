@@ -46,10 +46,10 @@ Several main relationships can be extracted as below:
 <a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_fueltype.png" align="right" width = "50%" ></a>
 + Keeping other variables unchanged, hybrid second-hand vehicles witnessed the highest average price, while the figure for LPG vehicles was the lowest. Particularly, hybrid cars usually have higher prices than other petrol-powered cars due to its better fuel efficiency. On the contrary, the average price of LPG vehicles was the lowest because LPG cars have a lower energy density per litre, which means that when travelling the same distance, LPG cars usually require more fuel than petrol-powered vehicles. Hence, customers tend to shift their demands toward more efficient cars, which lead to a decline in the number of LPG cars used in Australia as well as their prices.
 
-<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_drivetype.png" align="right" width = "50%" ></a>
+<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_drivetype.png" align="right" width = "48%" ></a>
 + Pre-owned vehicles with 4WD and AWD tended to have higher average prices than the other drive types. In addition, front-wheel drive type had the lowest average price, compared to other drive types, keeping other features fixed. Similar to transmission type, because AWD and 4WD types employ advanced systems to divert power to all four wheels, their production costs are usually higher than the figure for two-wheel drive systems (2WD), thus their prices also tend to be higher.
 
-<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_cyl.png" align="right" width = "50%" ></a>
+<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_cyl.png" align="right" width = "45%" ></a>
 + In terms of Cyl variable only, used vehicles having more than 8 cylinders in engine tended to have significant higher average prices than the others. In addition, second-hand cars having more engine cylinders tended to have higher average prices. Similarly, when displacement volume rose, the average prices of used cars also increased. The same trend also can be seen in FuelConsumption factor. According to below figure, engines having higher displacement volume and more engine cylinders can generate more power and consume more fuel, therefore, the prices of those powerful and bigger engines tend to be higher.
 <p align="center" width="100%">
     <img width="45%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_displacement.png">
@@ -67,6 +67,10 @@ Number of doors | Number of vehicles sold | Percentage (%)
 3 | 132 | 1.1
 4 | 8934 | 75
 5 | 2083 | 17.5
+
++ According to the correlation plot of the training dataset, only Cyl feature had a positive medium linear relationship with the Price variable, and its correlation coefficient was 0.46. By contrast, Kilometres run had the highest negative impact on the prices, with linear correlation coefficient of around -0.375. However, other features only had weak linear relationships with the price. These variables might have non-linear relationships with the outcome variable instead of linear relationships, hence their relationships can not be correctly indicated by using these linear correlation coefficients, which was confirmed by GAM plots later.
+<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/corr_coef_1.png" align="center" width = "60%" ></a>
+
 
 ### Training and fine-tuning ML models
 
