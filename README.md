@@ -80,7 +80,7 @@ Number of doors | Number of vehicles sold | Percentage (%)
 4 | 8934 | 75
 5 | 2083 | 17.5
 
-<p align="center" width="100%">
+<p align="left" width="100%">
     <img width="50%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/corr_coef_1.png">
 </p>
 
