@@ -52,9 +52,12 @@ Several main relationships can be extracted as below:
 <a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_cyl.png" align="right" width = "50%" ></a>
 + In terms of Cyl variable only, used vehicles having more than 8 cylinders in engine tended to have significant higher average prices than the others. In addition, second-hand cars having more engine cylinders tended to have higher average prices. Similarly, when displacement volume rose, the average prices of used cars also increased. The same trend also can be seen in FuelConsumption factor. According to below figure, engines having higher displacement volume and more engine cylinders can generate more power and consume more fuel, therefore, the prices of those powerful and bigger engines tend to be higher.
 <p align="center" width="100%">
-    <img width="50%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_displacement.png">
-    <img width="50%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_fuelconsumption.png">
+    <img width="45%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_displacement.png">
+    <img width="45%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_fuelconsumption.png">
 </p>
+
+<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_kilo.png" align="right" width = "50%" ></a>
++ If we only consider kilometres run, pre-owned vehicles that have traveled more kilometres tended to have lower prices than those with fewer kilometres run. It may be because vehicles have run more kilometres tend to be older than the other used vehicles.
 
 + Considering the number of doors only, used vehicles with 2 doors had the highest average price because they had higher number of engine cylinders and higher displacement volume. Following 2-door vehicles, vehicles with 4 doors had the second highest average price because it was the most popular vehicle type sold in the period 2010-2023, as indicated in the below Tab. 1. Therefore, it can be seen that higher demands in used vehicles with 4 doors can lead to their higher prices.
 
@@ -65,13 +68,7 @@ Number of doors | Number of vehicles sold | Percentage (%)
 4 | 8934 | 75
 5 | 2083 | 17.5
 
-<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/scatterplot_price_kilo.png" align="right" width = "50%" ></a>
-+ If we only consider kilometres run, pre-owned vehicles that have traveled more kilometres tended to have lower prices than those with fewer kilometres run. It may be because vehicles have run more kilometres tend to be older than the other used vehicles.
-
 ### Training and fine-tuning ML models
-
-
-
 
 <a href="url"><img src="https://github.com/Tien-le98/CIFAR-10-Image-Classification/blob/main/baseline.png" align="center"></a>
 
