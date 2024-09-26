@@ -9,7 +9,7 @@ ___
 ## INTRODUCTION
 In recent years, the demands of pre-owned vehicles in Australia have significantly increased due to two main reasons. First, negative events such as the COVID-19 pandemic, Red Sea shipping attacks, and Russia-Ukraine war, have negatively impacted the prices and availability of new vehicles. During the COVID-19 pandemic, the production and delivery of new vehicles were delayed due to serious lock-downs and social distancing requirements, which resulted in the shortage of available new cars in the automobile market. Besides, arising Red Sea shipping attacks compelled carriers to travel through the longer Cape of Good Hope route, which led to soaring transport costs and delivery delays for new vehicles. In addition, the supply chain of wiring harnesses, which is an important material used in manufacturing vehicles, was disrupted due to the Russia-Ukraine war, which also raised the prices of new vehicles. Second, in light of the government’s proposed New Vehicle Efficiency Standards, along with fierce competition from many rivals, automobile brands tend to apply more technological advancements to their products, making future vehicles more expensive. Due to this low availability and high prices of new vehicles, customers’ demands were shifted toward second-hand vehicles, causing an increase in used vehicles’ demands and their prices. As shown in the below figure, the average prices of pre-owned vehicles continuously rose from 2010 to 2023, and the changes in their prices even became more significant during and after the Covid-19 pandemic, which was from 2020 to 2023.
 
-<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/price_YoY.png" align="center" width = "70%" ></a>
+<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/price_YoY.png" width = "70%" align="center" ></a>
 
 This project focuses on 4 main tasks, as shown below:
 + Building a model that can accurately predict the prices of used vehicles based on their characteristics. Many machine learning models such as linear regression, generalized additive model, tree-based models, and support vector machine, were built and fine-tuned. Their performance were evaluated to figure out the best model, by using RMSE and R-squared.
@@ -41,10 +41,10 @@ Because Disp, FuelConsumption, and Cyl variables were highly correlated to each 
 ### Exploratory Data Analysis (EDA)
 Several main relationships can be extracted as below:
 <a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_transmission.png" align="right" width = "50%" ></a>
-+ Automatic used vehicles tended to have higher average price than manual vehicles, holding other features unchanged. It may be because an automatic transmission system is more advanced and complicated than a manual system, it usually requires higher production costs, which can result in higher prices. 
-+ Keeping other variables unchanged, hybrid second-hand vehicles witnessed the highest average price, while the figure for LPG vehicles was the lowest. Particularly, hybrid cars usually have higher prices than other petrol-powered cars due to its better fuel efficiency. On the contrary, the average price of LPG vehicles was the lowest because LPG cars have a lower energy density per litre, which means that when travelling the same distance, LPG cars usually require more fuel than petrol-powered vehicles. Hence, customers tend to shift their demands toward more efficient cars, which lead to a decline in the number of LPG cars used in Australia as well as their prices.
-<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_fueltype.png" align="right" width = "50%" ></a>
++ Automatic used vehicles tended to have higher average price than manual vehicles, holding other features unchanged. It may be because an automatic transmission system is more advanced and complicated than a manual system, it usually requires higher production costs, which can result in higher prices.
 
+<a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_fueltype.png" align="right" width = "50%" ></a>
++ Keeping other variables unchanged, hybrid second-hand vehicles witnessed the highest average price, while the figure for LPG vehicles was the lowest. Particularly, hybrid cars usually have higher prices than other petrol-powered cars due to its better fuel efficiency. On the contrary, the average price of LPG vehicles was the lowest because LPG cars have a lower energy density per litre, which means that when travelling the same distance, LPG cars usually require more fuel than petrol-powered vehicles. Hence, customers tend to shift their demands toward more efficient cars, which lead to a decline in the number of LPG cars used in Australia as well as their prices.
 
 <p align="center" width="100%">
     <img width="30%" src="https://github.com/Tien-le98/DA_Project_Spotify/blob/main/danceability">
@@ -52,10 +52,6 @@ Several main relationships can be extracted as below:
     <img width="30%" src="https://github.com/Tien-le98/DA_Project_Spotify/blob/main/speechiness">
 </p>
 
-<p align="center" width = "100%">
-  <img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_transmission.png" width="50%" />
-  <img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_fueltype.png" width="50%" />
-</p>
  
 3. Pre-owned vehicles with 4WD and AWD tended to have higher average prices than the other drive types. In addition, front-wheel drive type had the lowest average price, compared to other drive types, keeping other features fixed, according to Fig. 15. Similar to transmission type, because AWD and 4WD types employ advanced systems to divert power to all four wheels, their production costs are usually higher than the figure for two-wheel drive systems (2WD), thus their prices also tend to be higher.
 4. In terms of Cyl variable only, used vehicles having more than 8 cylinders in engine tended to have significant higher average prices than the others, as shown in Fig. 18. In addition, second-hand cars having more engine cylinders tended to have higher average prices. Similarly, when displacement volume rose, the average prices of
