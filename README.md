@@ -120,13 +120,11 @@ GAM | 15708.113 | 0.63
 + In terms of kilometres traveled, no matter which fuel type were employed, the prices of second-hand vehicles which traveled less than 50000km were higher than the average price, while the figure for vehicles traveled more than 50000km was lower.
 
 <p align="center" width="100%">
-    <img width="70%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/kilometre_shap.png">
+    <img width="50%" src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/kilometre_shap.png">
 </p>
 
++ Average Shapley values for each feature’s category or value range were also presented in the below figure. This figure can support Australian customers in estimating the difference between the predicted price of a second-hand vehicle and the average price when this vehicle’s features are available. For example, considering Kilometres traveled only, with a value of Kilometres less than 50000km, used vehicle’s predicted price tended to be nearly 4570AUD higher on average than the average price. Similarly, the estimated price of a second-hand vehicle using Unleaded tended to be 2645AUD lower than the average price. In terms of drive type only, a pre-owned vehicle using 4WD or AWD can have a predicted price over 2750AUD higher than the average price.
 
-+ In terms of the original dataset, the baseline CNN model converged after around 5 epochs with the accuracy score on the training set and the validation set of only 10%. However, this baseline model performed better on the dataset pre-processed by only Standard scaling method, with the maximum accuracy score on the training set was about 81%, and the maximum accuracy score on the validation set was nearly 67%, after 43 epochs. Because this accuracy score on the training set was around 14% higher than the figure for the validation set, this gap can raise a signal for potential overfitting problem. On the pre-processed data using only Max-Min scaling method, after 127 epochs, this baseline model obtained the accuracy score on the training dataset of about 79%, and the figure for the validation dataset of nearly 66%. Through this experiment, the dataset should be pre-processed before training CNN models in order to improve the model’s performance because accuracy score of models trained on the pre-processed dataset were significantly higher than the figure for the original dataset.
-+ Besides, according to this above table, when a CNN model only contains several layers, its capability is low, data augmentation methods applied on this model can make it perform worse, which was shown by the decrease in the training accuracy score and validation accuracy score. Hence, these data augmentation methods only should be considered in deeper and more complicated neural networks.
-+ Because the accuracy score of models trained on standard scaled dataset was the highest among other methods, the pre-processed training data using Standard scaling method was used to train other CNN architectures and analyze further.
 
 ### Experiment 2
 
