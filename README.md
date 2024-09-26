@@ -40,9 +40,16 @@ Because Disp, FuelConsumption, and Cyl variables were highly correlated to each 
 
 ### Exploratory Data Analysis (EDA)
 Several main relationships can be extracted as below:
-+ Automatic used vehicles tended to have higher average price than manual vehicles, holding other features unchanged. It may be because an automatic transmission system is more advanced and complicated than a manual system, it usually requires higher production costs, which can result in higher prices. ![transmission](https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_transmission.png)
++ Automatic used vehicles tended to have higher average price than manual vehicles, holding other features unchanged. It may be because an automatic transmission system is more advanced and complicated than a manual system, it usually requires higher production costs, which can result in higher prices. <a href="url"><img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_transmission.png" align="right" ></a>
+
 
 + Keeping other variables unchanged, hybrid second-hand vehicles witnessed the highest average price, while the figure for LPG vehicles was the lowest. Particularly, hybrid cars usually have higher prices than other petrol-powered cars due to its better fuel efficiency. On the contrary, the average price of LPG vehicles was the lowest because LPG cars have a lower energy density per litre, which means that when travelling the same distance, LPG cars usually require more fuel than petrol-powered vehicles. Hence, customers tend to shift their demands toward more efficient cars, which lead to a decline in the number of LPG cars used in Australia as well as their prices.
+
+<p align="center" width="100%">
+    <img width="30%" src="https://github.com/Tien-le98/DA_Project_Spotify/blob/main/danceability">
+    <img width="30%" src="https://github.com/Tien-le98/DA_Project_Spotify/blob/main/tempo">
+    <img width="30%" src="https://github.com/Tien-le98/DA_Project_Spotify/blob/main/speechiness">
+</p>
 
 <p float="left">
   <img src="https://github.com/Tien-le98/SHAPMethod_LocalExplanation/blob/main/boxplot_price_transmission.png" width="50%" />
