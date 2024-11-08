@@ -1,6 +1,6 @@
 # Explaining Predictions of Used Vehicle Prices by SHAP methods
 
-_Author: Clara Le_
+_Author: Pham Thuy Tien (Clara) Le_
 
 _Date: 10/08/2024_
 
